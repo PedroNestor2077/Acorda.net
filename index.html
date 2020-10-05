@@ -19,13 +19,13 @@
                 <button id=bt3>CRONÔMETRO</button>
             </div>
             <div class=container_input>
-                <input type="number" id=input1>:
-                <input type="number" id=input2>:
-                <input type="number" id=input3>
+                <input type="number" id=input1 min=0 max=24>:
+                <input type="number" id=input2 min=0 max=59>:
+                <input type="number" id=input3 min=0 max=59>
             </div>
             <div class=funçoes>
                 <div class=botoes_hora_r1>
-                    <button class=botao_hora>6:00</button>
+                    <button class=botao_hora >6:00</button>
                     <button class=botao_hora>7:00</button>
                     <button class=botao_hora>11:00</button>
                     <button class=botao_hora>6:00</button>
@@ -36,19 +36,21 @@
                     <button class=botao_hora>11:00</button>
                     
                 </div>
-                
                 <div class=seletor>
                     <select id=select_sons>
-                        <option value="1">SOM1</option>
-                        <option value="2">SOM2</option>
-                        <option value="3">SOM3</option>
-                        <option value="4">SOM4</option>
+                        <option value="sons/alarme1.mp3">ACORDA.NET</option>
+                        <option value="sons/alarme2.mp3">BEEP</option>
+                        <option value="sons/alarme3.mp3">PÁSSAROS</option>
+                        <option value="sons/alarme4.mp3">NOKIA</option>
+                        <option value="sons/alarme5.mp3">NOKIA</option>
                     </select>
+                    <audio src="sons/alarme1.mp3" id=a1></audio>
+                    
                 </div>
                 <div class=botao_selecionar_son>
                     <button id=bt_selecionar_son>SELECIONAR</button>
                 </div>
-                <div class=bt_confirmar>
+                <div>
                     <button id=bt_confirmar>CONFIRMAR</button>
                 </div>
                 <div class=info>
@@ -57,4 +59,5 @@
             </div> 
         </div>
     </body>    
+    <script type="text/javascript" src="script.js"></script>
 </html>

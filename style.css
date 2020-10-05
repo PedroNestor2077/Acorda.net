@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&display=swap');body{
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&display=swap');
+body{
     display: flex;
     background-color:rgb(44, 44, 78);
     align-items: center;
@@ -23,7 +24,8 @@ h1{
     font-style: italic;
     font-size: 30px;
     grid-column: 2;
-    margin-left: 15px;
+    margin-left: 40px;
+    margin-top: 5px;
    
 }
 .container_principal{
