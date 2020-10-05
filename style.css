@@ -1,26 +1,48 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&display=swap');body{
     display: flex;
     background-color:rgb(44, 44, 78);
     align-items: center;
     justify-content: center;
 }
-.container_principal{
-    display: flex;
-    flex-direction: column;
+.container-hora-titulo{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    flex-direction: row;
     align-items: center;
-    background-color: white;
+}
+h1{
+    font-family:'Bangers';
+    width: 100px;
+    font-size: 45px;
+    grid-column: 1;
+    margin-left: 3px;
+}
+#hora{
+    font-family:'Poiret One';
+    font-style: italic;
+    font-size: 30px;
+    grid-column: 2;
+    margin-left: 15px;
+   
+}
+.container_principal{
+    display: grid;
+    grid-template-rows: 10% 10% 20% 60%;
+    align-items: center;
     border-radius: 10px;
     width:400px;
     height: 600px;
     margin-top: 50px;
+    background-color: rgb(119, 155, 190);
 }
 .container_botoes{
-    display: inline-block;
-    background-color: grey;
+    background-color: rgb(119, 155, 190);
+    display: inline-flex;
     margin:6px;
     margin-top: 10px;
     border-radius: 15px;
     justify-content: center;
+    grid-row: 2;
 }
 #bt1{
     width:110px;
@@ -38,12 +60,17 @@ body{
     border-radius: 30px;
 }
 .container_input{
-    display: inline-block;
-    background-color: grey;
-    margin-top: 40px;
+    display: inline-flex;
+    flex-direction: row;
+    background-color: rgb(119, 155, 190);
+    margin-top: 10px;
     font-size: 50px;
     padding: 11px;
     border-radius: 20px;
+    grid-row: 3;
+    width: 90%;
+    margin-left: 10px;
+    justify-content: center;
 }
 #input1{
     width:100px;
@@ -64,4 +91,65 @@ body{
     font-size: 80px;
     border-radius: 5px;
     
+}
+.funçoes{
+    display: grid;
+    grid-template-columns:100px 100px 100px ;
+    grid-template-rows: 30% 30% 40% ;
+    column-gap: 20px;
+    row-gap:0px;
+    background-color: rgb(119, 155, 190);
+    width: 100%;
+    height: 100%;
+    margin-top: 2px;
+    border-radius: 5px;
+    align-items: top;   
+    grid-row: 4; 
+}
+.botoes_hora_r1{
+    display: flex;
+    flex-direction: column;
+    margin-top:2px;
+    grid-row-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+.botao_hora{
+    width:110px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 2px;
+}
+.seletor{
+    margin-top: 52px;
+    background-color: blue;
+    height: 20px;
+}
+#select_sons{
+    width:150px;
+    font-size: 20px; 
+    height: 30px;
+}
+#bt_selecionar_son{
+    border-radius: 100px;
+    width:110px;
+    height: 40px;
+    margin-left: 35px;
+    margin-top: 48px;
+}
+#bt_confirmar{
+    grid-row: 2;
+    grid-column: 2;
+    width:260px;
+    height: 100px;
+    border-radius: 200px;
+}
+.info{
+    border-radius: 20px;
+    width:270%;
+    height: 98%;
+    background-color: rgb(94, 127, 160);
+    grid-row: 3;
+    grid-column: 2;
 }
