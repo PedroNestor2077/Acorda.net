@@ -149,10 +149,41 @@ h1{
     border-radius: 200px;
 }
 .info{
+    display: grid;
+    flex-direction: row;
+    align-items: top;
+    grid-template-rows: 40% 40%;
+    grid-template-columns: 50% 50%;
     border-radius: 20px;
     width:270%;
     height: 98%;
     background-color: rgb(94, 127, 160);
     grid-row: 3;
     grid-column: 2;
+}
+#texto_alarme{
+    margin-left: 10px;
+    margin-top: 30px;
+}
+#texto_tempo{
+    margin-left: 10px;
+    margin-top: 30px;
+}
+#alarme{
+    grid-column:2;
+    grid-row: 1;
+    font-size: 30px;
+}
+#tempo{
+    grid-row: 2;
+    grid-column: 2;
+    font-size: 30px;
+}
+
+.dispertou{
+    display: flex;
+    background-color:red;
+    align-items: center;
+    justify-content: center;
+    
 }

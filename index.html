@@ -44,8 +44,6 @@
                         <option value="sons/alarme4.mp3">NOKIA</option>
                         <option value="sons/alarme5.mp3">NOKIA</option>
                     </select>
-                    <audio src="sons/alarme1.mp3" id=a1></audio>
-                    
                 </div>
                 <div class=botao_selecionar_son>
                     <button id=bt_selecionar_son>SELECIONAR</button>
@@ -53,11 +51,15 @@
                 <div>
                     <button id=bt_confirmar>CONFIRMAR</button>
                 </div>
-                <div class=info>
-    
+                <div class=info>                   
+                    <p id=texto_alarme><STRONG>ALARME :</STRONG></p>
+                    <h2 id=alarme>00:00:00</h2>
+                    <p id=texto_tempo><strong>RESTANTE :</strong></p>
+                    <h2 id=tempo>00:00:00</h2>
                 </div>
             </div> 
         </div>
-    </body>    
+    </body> 
+    <audio src="sons/alarme1.mp3" id=audio></audio>   
     <script type="text/javascript" src="script.js"></script>
 </html>
