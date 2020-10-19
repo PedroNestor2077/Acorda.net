@@ -19,7 +19,7 @@ h1{
     grid-column: 1;
     margin-left: 3px;
 }
-#hora{
+#relogio{
     font-family:'Poiret One';
     font-style: italic;
     font-size: 30px;
@@ -47,17 +47,17 @@ h1{
     justify-content: center;
     grid-row: 2;
 }
-#bt1{
+#bt_timer{
     width:110px;
     height: 50px;
     border-radius: 30px;
 }
-#bt2{
+#bt_dispertador{
     width: 133px;
     height: 50px;
     border-radius: 30px;
 }
-#bt3{
+#bt_cronometro{
     width: 133px;
     height: 50px;
     border-radius: 30px;
@@ -75,20 +75,20 @@ h1{
     margin-left: 10px;
     justify-content: center;
 }
-#input1{
+#input_hora{
     width:100px;
     height: 70px;   
     font-size: 80px;
     border-radius: 5px;
 }
-#input2{
+#input_minuto{
     width:100px;
     height: 70px;
     font-size: 80px;
     border-radius: 5px;
     
 }
-#input3{
+#input_segundo{
     width:100px;
     height: 70px;
     font-size: 80px;
