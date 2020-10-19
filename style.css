@@ -98,7 +98,7 @@ h1{
 .funçoes{
     display: grid;
     grid-template-columns:100px 100px 100px ;
-    grid-template-rows: 30% 30% 40% ;
+    grid-template-rows:15% 20% 35% 30% ;
     column-gap: 20px;
     row-gap:0px;
     background-color: rgb(119, 155, 190);
@@ -115,7 +115,7 @@ h1{
     margin-top:2px;
     grid-row-start: 1;
     grid-row-start: 1;
-    grid-row-end: 4;
+    grid-row-end: 5;
 }
 .botao_hora{
     width:110px;
@@ -125,28 +125,39 @@ h1{
     margin-top: 2px;
 }
 .seletor{
-    margin-top: 52px;
+    margin-top: 25px;
     background-color: blue;
     height: 20px;
+    grid-row: 1;
+    grid-column: 2;
+    
 }
 #select_sons{
     width:150px;
     font-size: 20px; 
-    height: 30px;
+    height: 40px;
+    grid-row: 2;
+    grid-column: 2;
+    border-radius: 5px;
 }
 #bt_selecionar_son{
+    grid-row: 1;
     border-radius: 100px;
     width:110px;
     height: 40px;
-    margin-left: 35px;
-    margin-top: 48px;
+    margin-left: 37px;
+    margin-top: 25px;
 }
 #bt_confirmar{
-    grid-row: 2;
-    grid-column: 2;
+    
     width:260px;
     height: 100px;
     border-radius: 200px;
+}
+.bt_confirmar{
+    grid-row: 3;
+    grid-column: 2;
+
 }
 .info{
     display: grid;
@@ -158,7 +169,7 @@ h1{
     width:270%;
     height: 98%;
     background-color: rgb(94, 127, 160);
-    grid-row: 3;
+    grid-row: 4;
     grid-column: 2;
 }
 #texto_alarme{
@@ -179,11 +190,29 @@ h1{
     grid-column: 2;
     font-size: 30px;
 }
-
 .dispertou{
     display: flex;
     background-color:red;
     align-items: center;
     justify-content: center;
     
+}
+.volume{
+    display: grid;
+    grid-template-columns: 200% 100%;
+    grid-row: 2;
+    grid-column: 2;
+}
+#bt_tocar_son{
+    grid-template-columns: 2;
+    margin-top: 20px;
+    border-radius: 200px;
+    width:45px;
+    height:45px;
+    background-image:url("img/ico_volume.png");
+    background-position: center;
+    background-size:45px ;
+}
+#seletor_volume{
+    margin-top: 20px;
 }
