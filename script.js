@@ -3,7 +3,7 @@ class Repetidor{
         setInterval(function(){
             for (var i = 0; i < func.length; i++) {               
                 func[i]()
-                console.log(i);
+                
              }},1000)
     };
     adicionar_funcao(funcao){
@@ -72,7 +72,6 @@ class Formatador{
 };
 class Relogio{
     horario(){
-        console.log("foi")
         let hora=new Date();
         horario.hora=(hora.getHours());
         horario.minuto=(hora.getMinutes());
@@ -121,19 +120,27 @@ class Dispertador{
         let r_m=parseInt(input_minuto.value);
         let r_s=parseInt(input_segundo.value);
         let r_h=parseInt(input_hora.value);
-        var alarme=formatador_dispertador.formatatar_hora(h,m,s)
-        if (confirm("Comfirmar alarme: "+alarme+" H")){
-            /*  info  */
-            info_alarme.innerText=alarme
-            tempo_restante(r_h,r_m,r_s)
-            /*  info  */
-            let checar_alarme=setInterval(function(){
-                /*  --ALARME-DISPERTADOR--  */
-                if (horario.formatado==alarme){
-                    dispertador.dispertar()
-                    clearInterval(checar_alarme)
-                };
-            },500)
+        if (r_h<=24 & r_m <=60 & r_s<=60){
+            var alarme=formatador_dispertador.formatatar_hora(h,m,s)
+            if (confirm("Comfirmar alarme: "+alarme+" H")){
+                /*  info  */
+                info_alarme.innerText=alarme
+                tempo_restante(r_h,r_m,r_s)
+                /*  info  */
+                let checar_alarme=setInterval(function(){
+                    /*  --ALARME-DISPERTADOR--  */
+                    if (horario.formatado==alarme){
+                        dispertador.dispertar()
+                        clearInterval(checar_alarme)
+                    };
+                },500)
+            };
+        }
+        else{
+            window.alert("Valores inválidos!")
+            input_hora.value=""
+            input_minuto.value=""
+            input_segundo.value=""
         };
     };
     dispertar(){
@@ -141,6 +148,7 @@ class Dispertador{
     let body=window.document.body;
     trocar_classe(body,'body','dispertou');
     controlador.tocar_dispertador()
+    repetidor.limpar_contagem(tempo_restante.contagem_regressiva)
     };
 };
 function converter_minutos_em_horas(minutos){
