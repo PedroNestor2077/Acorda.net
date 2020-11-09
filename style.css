@@ -1,39 +1,35 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&display=swap');
+html
+{
+  position:fixed;
+  width:100%;
+  height:100%;
+}
 body{
+    margin: 0px;
+    padding: 0px;
     display: flex;
     background-color:rgb(44, 44, 78);
     align-items: center;
     justify-content: center;
-}
-.container-hora-titulo{
-    display:grid;
-    grid-template-columns: 50% 50%;
-    flex-direction: row;
-    align-items: center;
-}
-h1{
-    font-family:'Bangers';
-    width: 100px;
-    font-size: 45px;
-    grid-column: 1;
-    margin-left: 3px;
 }
 #relogio{
     font-family:'Poiret One';
     font-style: italic;
     font-size: 30px;
     grid-column: 2;
-    margin-left: 40px;
+    margin-left: 80px;
     margin-top: 5px;
    
 }
 .container_principal{
+    position: relative;
     display: grid;
-    grid-template-rows: 10% 10% 20% 60%;
+    grid-template-rows: 10% 10% 16% 64%;
     align-items: center;
     border-radius: 10px;
-    width:400px;
+    width:402px;
     height: 600px;
     margin-top: 50px;
     background-color: rgb(119, 155, 190);
@@ -47,57 +43,9 @@ h1{
     justify-content: center;
     grid-row: 2;
 }
-#bt_timer{
-    width:110px;
-    height: 50px;
-    border-radius: 30px;
-}
-#bt_dispertador{
-    width: 133px;
-    height: 50px;
-    border-radius: 30px;
-}
-#bt_cronometro{
-    width: 133px;
-    height: 50px;
-    border-radius: 30px;
-}
-.container_input{
-    display: inline-flex;
-    flex-direction: row;
-    background-color: rgb(119, 155, 190);
-    margin-top: 10px;
-    font-size: 50px;
-    padding: 11px;
-    border-radius: 20px;
-    grid-row: 3;
-    width: 90%;
-    margin-left: 10px;
-    justify-content: center;
-}
-#input_hora{
-    width:100px;
-    height: 70px;   
-    font-size: 80px;
-    border-radius: 5px;
-}
-#input_minuto{
-    width:100px;
-    height: 70px;
-    font-size: 80px;
-    border-radius: 5px;
-    
-}
-#input_segundo{
-    width:100px;
-    height: 70px;
-    font-size: 80px;
-    border-radius: 5px;
-    
-}
 .funçoes{
     display: grid;
-    grid-template-columns:100px 100px 100px ;
+    grid-template-columns:100px 100px 160px ;
     grid-template-rows:15% 20% 35% 30% ;
     column-gap: 20px;
     row-gap:0px;
@@ -117,16 +65,8 @@ h1{
     grid-row-start: 1;
     grid-row-end: 5;
 }
-.botao_hora{
-    width:110px;
-    height: 50px;
-    border-radius: 30px;
-    font-size: 20px;
-    margin-top: 2px;
-}
 .seletor{
     margin-top: 25px;
-    background-color: blue;
     height: 20px;
     grid-row: 1;
     grid-column: 2;
@@ -139,20 +79,14 @@ h1{
     grid-row: 2;
     grid-column: 2;
     border-radius: 5px;
+
+    padding: 10px;
+    border: none;
+    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+    outline: none;
 }
-#bt_selecionar_son{
-    grid-row: 1;
-    border-radius: 100px;
-    width:110px;
-    height: 40px;
-    margin-left: 37px;
-    margin-top: 25px;
-}
-#bt_confirmar{
-    
-    width:260px;
-    height: 100px;
-    border-radius: 200px;
+#select_sons:hover{
+    background-color: grey;
 }
 .bt_confirmar{
     grid-row: 3;
@@ -164,21 +98,13 @@ h1{
     flex-direction: row;
     align-items: top;
     grid-template-rows: 40% 40%;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 30% 70%;
     border-radius: 20px;
     width:270%;
     height: 98%;
     background-color: rgb(94, 127, 160);
     grid-row: 4;
     grid-column: 2;
-}
-#texto_alarme{
-    margin-left: 10px;
-    margin-top: 30px;
-}
-#texto_tempo{
-    margin-left: 10px;
-    margin-top: 30px;
 }
 #alarme{
     grid-column:2;
@@ -214,5 +140,201 @@ h1{
     background-size:45px ;
 }
 #seletor_volume{
-    margin-top: 20px;
+
+    margin-top: 40px;
+    box-shadow:inset 0 3px 10px rgba(0,0,0,.5);
+    height: 10px;
+    border-radius: 10px;
+}
+#seletor_volume::-webkit-slider-thumb{
+    width: 40px;
+    height:10px;
+    background-color: white;
+    cursor: pointer;
+}
+/*  -------------------------novo css-------------------------                        */
+.botao_hora{
+    width:110px;
+    height: 37px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 05px;
+    margin-left: 3px;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 4px 0 rgba(0,0,0,.5);
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    font-weight: 600;
+}
+.botao_hora:hover{
+    background-color: grey;
+    width:110px;
+    height: 37px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 2px 0 black;
+}
+.botao_hora:active{
+    position: relative;
+    top: 2px;
+    box-shadow:none;
+
+}
+.bt-funçoes{
+    width: 130px;
+    height: 50px;
+    border-radius: 30px;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,.5);
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    font-weight: 550;
+    font-size: 15px;
+    
+}
+.bt-funçoes:hover{
+    width: 130px;
+    height: 50px;
+    border-radius: 30px;
+    border:none;
+    cursor: pointer;
+    background-color: grey;
+    box-shadow: 0 4px 8px rgba(0,0,0,.7);
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    font-weight: 550;
+    font-size: 15px;
+}
+.bt-funçoes:active{
+    position: relative;
+    top:5px;
+    box-shadow:none;
+}
+#bt_selecionar_son{
+    font-size: 13px;
+    grid-row: 1;
+    border-radius: 100px;
+    width:110px;
+    height: 40px;
+    margin-left: 37px;
+    margin-top: 25px;
+}
+.video-bg{
+    position: absolute;
+    margin:0px;
+    padding: 0px;
+    right:0;
+    bottom:0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height:auto;
+    z-index: -1;
+    pointer-events: none;
+    
+}
+@media (min-aspect-ratio:16/9){
+    .video-bg{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    .video-bg{
+        width: auto;
+        height: 100%;
+    }
+}
+#bt_confirmar{    
+    width:260px;
+    height: 100px;
+    border-radius: 200px;
+    border: none;
+    box-shadow:0 8px 25px rgba(0,0,0,.5);
+    font-weight: 600;
+    font-size: 17px;    
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+#bt_confirmar:hover{
+    background-color: grey;
+    box-shadow:0 8px 25px rgba(0,0,0,.7);
+}
+#bt_confirmar:active{
+    position: relative;
+    top:5px;
+    background-color: grey;
+    box-shadow:0 0px 0px rgba(0,0,0,.7);
+
+}
+.container_input{
+    display: inline-flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+    background-color: rgb(119, 155, 190);
+    margin-top: 10px;
+    font-size: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    grid-row: 3;
+    width: 90%;
+    margin-left: 20px;
+    justify-content: center;
+}
+.input{
+    width:100px;
+    height: 70px;   
+    font-size: 75px;
+    border-radius: 5px;
+    box-shadow:0px 2px 0px rgba(0,0,0,.2);
+    border: none;
+    border-bottom:3px solid silver;
+}
+.input:hover{
+    box-shadow:0px 2px 0px rgba(0,0,0,1);
+}
+.container-hora-titulo{
+    display:grid;
+    grid-template-columns: 40% 60%;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px
+}
+h1{
+    font-family:'Bangers';
+    width: 100px;
+    font-size: 45px;
+    grid-column: 1;
+    margin-left: 5px;
+}
+.info_texto{
+    font-size: 35px;
+    margin-top: 5px;
+}
+#icone-alarme{
+    margin-left: 20px;
+    margin-top: 3px;
+    
+}
+#icone-ampulheta{
+    margin-left: 20px;
+}
+#info_tempo{
+    margin-top: 10px;
+    color: rgba(0,0,0,.7);
+}
+#info_alarme{
+    color: rgba(0,0,0,.7);
+}
+#progress-bar{
+    margin-left: 79px;
+    width: 135px;
 }

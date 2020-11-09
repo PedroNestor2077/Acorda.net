@@ -115,10 +115,10 @@ class Controlador{
 class Dispertador{
     novo_alarme(){
         let m=String(input_minuto.value);
-        let s=String(input_segundo.value);
+        let s=String(0);
         let h=String(input_hora.value);
         let r_m=parseInt(input_minuto.value);
-        let r_s=parseInt(input_segundo.value);
+        let r_s=parseInt(0);
         let r_h=parseInt(input_hora.value);
         if (r_h<=24 & r_m <=60 & r_s<=60){
             var alarme=formatador_dispertador.formatatar_hora(h,m,s)
@@ -127,13 +127,6 @@ class Dispertador{
                 info_alarme.innerText=alarme
                 tempo_restante(r_h,r_m,r_s)
                 /*  info  */
-                let checar_alarme=setInterval(function(){
-                    /*  --ALARME-DISPERTADOR--  */
-                    if (horario.formatado==alarme){
-                        dispertador.dispertar()
-                        clearInterval(checar_alarme)
-                    };
-                },500)
             };
         }
         else{
@@ -158,7 +151,7 @@ function converter_minutos_em_horas(minutos){
     hora_restante.hora=hora
     hora_restante.minuto=minuto
 };
-function tempo_restante(h,m,s){
+function tempo_restante(h,m){
         /* verificar dia */
         if (h<=horario.hora){
             if (h==horario.hora){
@@ -166,9 +159,7 @@ function tempo_restante(h,m,s){
                     h=h+24  
                 }
                 else if (m==horario.minuto){
-                    if (s<horario.segundo){
-                        h=h+24
-                    }
+                    h=h+24
                 }
             }
             else{
@@ -181,19 +172,27 @@ function tempo_restante(h,m,s){
         hora_restante_em_minutos=(hora_em_minutos-hora_final_em_minutos)
         if (hora_restante_em_minutos<0){
             hora_restante_em_minutos=(hora_restante_em_minutos*-1)
+            console.log("entrei")
         };
-        hora_restante_em_minutos=hora_restante_em_minutos-1
-        converter_minutos_em_horas(hora_restante_em_minutos)
         hora_restante.segundo=(60-horario.segundo)
-        if (hora_restante.segundo<0){
-                hora_restante.segundo=hora_restante.segundo*-1        
+        converter_minutos_em_horas(hora_restante_em_minutos)
+        if (hora_restante.minuto>1){
+            hora_restante.minuto=hora_restante.minuto-1
         }
-        if (hora_restante.segundo==60){
-                hora_restante.segundo=00
+        if (m==horario.minuto+1){
+            hora_restante.minuto=0
         }
-    /* Contagem regressiva */
+        progress_bar.max=(hora_restante.minuto*60)+hora_restante.segundo
+        progress_bar.value=(hora_restante.minuto*60)+hora_restante.segundo
+           /* Contagem regressiva */
     function contagem_regressiva(){
-        if (hora_restante.segundo==00){
+        // DISPERTADOR
+        if (hora_restante.minuto==0 & hora_restante.hora==0 & hora_restante.segundo==1){
+            dispertador.dispertar()
+            repetidor.limpar_contagem(contagem_regressiva)
+            console.log('entrei')
+        }
+        if (hora_restante.segundo==00 & hora_restante.minuto!=0){
             hora_restante.segundo=60
             hora_restante.minuto=hora_restante.minuto-1
         }
@@ -202,6 +201,7 @@ function tempo_restante(h,m,s){
             hora_restante.hora=hora_restante.hora-1
         }
         hora_restante.segundo=hora_restante.segundo-1
+        progress_bar.value=progress_bar.value-1
         let f_hora_restante=String(hora_restante.hora)
         let f_minuto_restante=String(hora_restante.minuto)
         let f_segundo_restante=String(hora_restante.segundo)
@@ -259,6 +259,7 @@ var info_tempo=window.document.getElementById('info_tempo');
 var bt_tocar_son=window.document.getElementById("bt_tocar_son");
 var seletor_volume=window.document.getElementById("seletor_volume")
 var bt_selecionar=window.document.getElementById("bt_selecionar_son")
+var progress_bar=window.document.getElementById("progress-bar")
 /*                          REFERENCIA HTML       */
 repetidor=new Repetidor()
 rel=new Relogio()
@@ -279,7 +280,7 @@ bt6.addEventListener("click",inserir_hora);
 bt7.addEventListener("click",inserir_hora);
 bt8.addEventListener("click",inserir_hora);
 bt9.addEventListener("click",inserir_hora);
-bt_confirmar.addEventListener("click",dispertador.novo_alarme);
+bt_confirmar.addEventListener("mouseup",dispertador.novo_alarme);
 bt_tocar_son.addEventListener("click",controlador.tocar);
 seletor_volume.addEventListener("input",controlador.volume)
 bt_selecionar.addEventListener("click",controlador.diretorio)
