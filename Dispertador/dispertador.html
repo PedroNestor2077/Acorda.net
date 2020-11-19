@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 
-<link href="style.css" rel="stylesheet">
+<link href="dispertador_style.css" rel="stylesheet">
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Acorda.net</title>
     </head>
     <body> 
+       
+        <div class="dispertar" id="dispertar">
+            <h2 id="hora_dispertou">00:00:00</h2>
+            <button id="bt_desligar_alarme" class="bt_confirmar">DESLIGAR</button>
+            <img src="../img/icone_volume.png" width="300px" id='icone_volume'>
+        </div>
+        <div class="bg"></div>
         <video autoplay muted loop class=video-bg>
-            <source src="img/video-bg2.mp4" type="video/mp4">
+            <source src="../img/video-bg2.mp4" type="video/mp4">
         </video>      
-            <div class=container_principal>
+            <div class=container_principal id=container_principal>
             <div class=container-hora-titulo>
                 <h1 >ACORDA.NET</h1>
                 <span id=relogio>
@@ -22,7 +29,7 @@
                 <button id=bt_cronometro class=bt-funçoes>CRONÔMETRO</button>
             </div>
             <div class=container_input>
-                <input type="number" id=input_hora class=input min=0 max=24>:
+                <input type="number" id=input_hora class=input min=0 max=23>:
                 <input type="number" id=input_minuto class=input min=0 max=59>:
                 <input type="number" id=input_segundo class=input min=0 max=59>
             </div>
@@ -44,28 +51,28 @@
                 </div>
                 <div class=seletor>
                     <select id=select_sons>
-                        <option value="sons/alarme1.mp3">BEEP 1</option>
-                        <option value="sons/alarme2.mp3">BEEP 2</option>
-                        <option value="sons/alarme3.mp3">BEEP 3</option>
-                        <option value="sons/alarme4.mp3">GALO</option>
-                        <option value="sons/alarme5.mp3">NOKIA</option>
-                        <option value="sons/alarme6.mp3">SINOS</option>
-                        <option value="sons/alarme7.mp3">SIRENE</option>
+                        <option value="./sons/alarme1.mp3">BEEP 1</option>
+                        <option value="./sons/alarme2.mp3">BEEP 2</option>
+                        <option value="./sons/alarme3.mp3">BEEP 3</option>
+                        <option value="./sons/alarme4.mp3">GALO</option>
+                        <option value="./sons/alarme5.mp3">NOKIA</option>
+                        <option value="./sons/alarme6.mp3">SINOS</option>
+                        <option value="./sons/alarme7.mp3">SIRENE</option>
                     </select>
                 </div>
                 <div class=botao_selecionar_son>
                     <button id=bt_selecionar_son class=botao_hora>SELECIONAR</button>
                 </div>
-                <div class=bt_confirmar>
-                    <button id=bt_confirmar>CONFIRMAR</button>
+                <div class=bt_confirmar_>
+                    <button class=bt_confirmar id=confirmar>CONFIRMAR</button>
                 </div>
                 <div class=info>                   
                     <figure id=icone-alarme>
-                        <img src="img/icone-alarme.png" alt="Minha Figura" width="40px">	
+                        <img src="../img/icone-alarme.png" alt="Minha Figura" width="40px">	
                       </figure>
                     <h2 id=info_alarme class=info_texto>00:00:00</h2>
                     <figure id=icone-ampulheta>
-                        <img src="img/icone-ampulheta.png" alt="Minha Figura" width="40px">	
+                        <img src="../img/icone-ampulheta.png" alt="Minha Figura" width="40px">	
                       </figure>
                     <h2 id=info_tempo class=info_texto>00:00:00</h2>
                     <progress id=progress-bar></progress>
@@ -73,6 +80,6 @@
             </div> 
             </div>
     </body> 
-    <audio src="sons/alarme1.mp3" id=audio></audio>   
-    <script type="text/javascript" src="script.js"></script>
+    <audio src="../sons/alarme1.mp3" id=audio></audio>   
+    <script type="text/javascript" src="dispertador_script.js"></script>
 </html>

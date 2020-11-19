@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Poiret+One&display=swap');
 html
 {
@@ -14,6 +13,13 @@ body{
     align-items: center;
     justify-content: center;
 }
+.bg{
+    position: absolute;
+    width: 200%;
+    height: 210%;
+    background-color: rgba(0, 0, 0, .3);
+    pointer-events: none;
+}
 #relogio{
     font-family:'Poiret One';
     font-style: italic;
@@ -21,7 +27,6 @@ body{
     grid-column: 2;
     margin-left: 80px;
     margin-top: 5px;
-   
 }
 .container_principal{
     position: relative;
@@ -33,6 +38,35 @@ body{
     height: 600px;
     margin-top: 50px;
     background-color: rgb(119, 155, 190);
+    box-shadow: 10px 20px 10px rgba(0,0,0,.7);
+    border: solid black 3px;
+}
+.container_principal:hover{
+    position: relative;
+    display: grid;
+    grid-template-rows: 10% 10% 16% 64%;
+    align-items: center;
+    border-radius: 10px;
+    width:402px;
+    height: 600px;
+    margin-top: 50px;
+    background-color: rgb(119, 155, 190);
+    box-shadow: 10px 22px 15px rgba(0,0,0,.9);
+    border: solid black 3px;
+}
+.container_principal_off{
+    position:flex;
+    display: grid;
+    grid-template-rows: 10% 10% 16% 64%;
+    align-items: center;
+    border-radius: 10px;
+    width:402px;
+    height: 600px;
+    margin-top: 50px;
+    background-color: rgb(119, 155, 190);
+    box-shadow: 10px 20px 10px rgba(0,0,0,.7);
+    border: solid black 2px;
+    pointer-events: none;
 }
 .container_botoes{
     background-color: rgb(119, 155, 190);
@@ -41,7 +75,7 @@ body{
     margin-top: 10px;
     border-radius: 15px;
     justify-content: center;
-    grid-row: 2;
+    grid-row: 2;y
 }
 .funçoes{
     display: grid;
@@ -70,7 +104,6 @@ body{
     height: 20px;
     grid-row: 1;
     grid-column: 2;
-    
 }
 #select_sons{
     width:150px;
@@ -88,7 +121,7 @@ body{
 #select_sons:hover{
     background-color: grey;
 }
-.bt_confirmar{
+.bt_confirmar_{
     grid-row: 3;
     grid-column: 2;
 
@@ -105,6 +138,8 @@ body{
     background-color: rgb(94, 127, 160);
     grid-row: 4;
     grid-column: 2;
+    margin-top:-5px;
+    box-shadow:0px 2px 2px rgba(0,0,0,.7);
 }
 #alarme{
     grid-column:2;
@@ -167,6 +202,7 @@ body{
     outline: 0px auto -webkit-focus-ring-color;
     outline-offset: 0px;
     font-weight: 600;
+    background-color: #E6E6FA;
 }
 .botao_hora:hover{
     background-color: grey;
@@ -239,7 +275,6 @@ body{
     height:auto;
     z-index: -1;
     pointer-events: none;
-    
 }
 @media (min-aspect-ratio:16/9){
     .video-bg{
@@ -253,7 +288,7 @@ body{
         height: 100%;
     }
 }
-#bt_confirmar{    
+.bt_confirmar{    
     width:260px;
     height: 100px;
     border-radius: 200px;
@@ -264,11 +299,11 @@ body{
     outline: thin dotted;
     outline: 0px auto -webkit-focus-ring-color;
 }
-#bt_confirmar:hover{
+.bt_confirmar:hover{
     background-color: grey;
     box-shadow:0 8px 25px rgba(0,0,0,.7);
 }
-#bt_confirmar:active{
+.bt_confirmar:active{
     position: relative;
     top:5px;
     background-color: grey;
@@ -297,6 +332,7 @@ body{
     box-shadow:0px 2px 0px rgba(0,0,0,.2);
     border: none;
     border-bottom:3px solid silver;
+    color:rgba(0,0,0,.8);
 }
 .input:hover{
     box-shadow:0px 2px 0px rgba(0,0,0,1);
@@ -321,7 +357,7 @@ h1{
 }
 #icone-alarme{
     margin-left: 20px;
-    margin-top: 3px;
+    margin-top: 5px;
     
 }
 #icone-ampulheta{
@@ -337,4 +373,49 @@ h1{
 #progress-bar{
     margin-left: 79px;
     width: 135px;
+}
+.dispertar{
+    position: absolute;
+    display: grid;
+    grid-template-rows: 30% 30% 30%;
+    align-items: center;
+    border-radius: 10px;
+    width:402px;
+    height: 600px;
+    margin-top: 50px;
+    background-color:rgba(172, 185, 241, 0.9);
+    border: solid black 2px;
+    text-align: center;
+}
+.dispertar_off{
+    position: absolute;
+    display: grid;
+    grid-template-rows: 30% 30% 30%;
+    align-items: center;
+    border-radius: 10px;
+    width:402px;
+    height: 600px;
+    margin-top: 50px;
+    background-color:rgba(172, 185, 241, 0.9);
+    border: solid black 2px;
+    text-align: center;
+    pointer-events: none;
+}
+#icone_volume{
+    grid-row:2;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+#hora_dispertou{
+    grid-row:1;
+    font-family:'Bangers';
+    font-size:105px;
+}
+#bt_desligar_alarme{
+    margin-top:100px;
+    grid-row:3;
+    width:230px;
+    height:90px;
+    background-color:rgba(0, 0, 225, .9);
+    margin-left:85px;
 }

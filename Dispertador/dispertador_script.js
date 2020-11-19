@@ -92,7 +92,7 @@ class Relogio{
 class Controlador{
     constructor(){
         audio.src=select_sons.value
-        audio.volume=(seletor_volume.value/100)  
+        audio.volume=(seletor_volume.value/100)*0 
     };
     volume(){
         audio.volume=(seletor_volume.value/100)
@@ -111,6 +111,10 @@ class Controlador{
             audio.loop=false
         },300000)
     };
+    parar(){
+        audio.loop=false
+        audio.src="sons/alarme1.mp3"
+    };
 };
 class Dispertador{
     novo_alarme(){
@@ -120,11 +124,12 @@ class Dispertador{
         let r_m=parseInt(input_minuto.value);
         let r_s=parseInt(0);
         let r_h=parseInt(input_hora.value);
-        if (r_h<=24 & r_m <=60 & r_s<=60){
+        if (r_h<=23 & r_m <=59  & r_s<=59){
             var alarme=formatador_dispertador.formatatar_hora(h,m,s)
             if (confirm("Comfirmar alarme: "+alarme+" H")){
                 /*  info  */
                 info_alarme.innerText=alarme
+                hora_dispertou.innerText=alarme
                 tempo_restante(r_h,r_m,r_s)
                 /*  info  */
             };
@@ -137,11 +142,22 @@ class Dispertador{
         };
     };
     dispertar(){
-    console.log('DISPERTOU')
-    let body=window.document.body;
-    trocar_classe(body,'body','dispertou');
-    controlador.tocar_dispertador()
-    repetidor.limpar_contagem(tempo_restante.contagem_regressiva)
+        animacao()
+        console.log('DISPERTOU')
+        let container_principal=window.document.getElementById("container_principal");
+        trocar_classe(container_principal,'container_principal','container_principal_off');
+        let janela_dispertar=window.document.getElementById("dispertar");
+        trocar_classe(janela_dispertar,'dispertar_off','dispertar');
+        controlador.tocar_dispertador()
+        repetidor.limpar_contagem(tempo_restante.contagem_regressiva)
+        
+    };
+    desligar_dispertador(){
+        controlador.parar()
+        let container_principal=window.document.getElementById("container_principal");
+        trocar_classe(container_principal,'container_principal_off','container_principal');
+        let janela_dispertar=window.document.getElementById("dispertar");
+        trocar_classe(janela_dispertar,'dispertar','dispertar_off');
     };
 };
 function converter_minutos_em_horas(minutos){
@@ -182,8 +198,9 @@ function tempo_restante(h,m){
         if (m==horario.minuto+1){
             hora_restante.minuto=0
         }
-        progress_bar.max=(hora_restante.minuto*60)+hora_restante.segundo
-        progress_bar.value=(hora_restante.minuto*60)+hora_restante.segundo
+        progress_bar.max=(((hora_restante_em_minutos-1)*60)+hora_restante.segundo)
+        progress_bar.value=progress_bar.max
+        console.log(progress_bar.max,"-----",hora_restante_em_minutos)
            /* Contagem regressiva */
     function contagem_regressiva(){
         // DISPERTADOR
@@ -196,8 +213,8 @@ function tempo_restante(h,m){
             hora_restante.segundo=60
             hora_restante.minuto=hora_restante.minuto-1
         }
-        if (hora_restante.minuto==0 & hora_restante.hora!=0){
-            hora_restante.minuto=60
+        if (hora_restante.minuto==0 & hora_restante.hora>0){
+            hora_restante.minuto=59
             hora_restante.hora=hora_restante.hora-1
         }
         hora_restante.segundo=hora_restante.segundo-1
@@ -221,6 +238,17 @@ function inserir_hora(){
     input_hora.value=texto_botao;
     input_minuto.value='00';
     input_segundo.value='00';
+};
+function animacao(){
+    let a=0
+    let surces=["../img/icone_volume.png","../img/icone_volume.png","../img/icone_volume.png","../img/icone_volume1.png","../img/icone_volume2.png","../img/icone_volume3.png"]
+    setInterval(function(){
+        if (a==6){
+            a=0
+        };
+        icone_volume.src=surces[a]
+        a+=1
+    },130);
 };
 /*                   VARIAVEIS GLOBAIS        */
 const horario={
@@ -247,7 +275,7 @@ var bt6=window.document.getElementsByClassName('botao_hora')[5];
 var bt7=window.document.getElementsByClassName('botao_hora')[6];
 var bt8=window.document.getElementsByClassName('botao_hora')[7];
 var bt9=window.document.getElementsByClassName('botao_hora')[8];
-var bt_confirmar=window.document.getElementById('bt_confirmar');
+var bt_confirmar=window.document.getElementById('confirmar');
 var relogio=window.document.getElementById('relogio');
 var input_hora=window.document.getElementById('input_hora');
 var input_minuto=window.document.getElementById('input_minuto');
@@ -260,6 +288,9 @@ var bt_tocar_son=window.document.getElementById("bt_tocar_son");
 var seletor_volume=window.document.getElementById("seletor_volume")
 var bt_selecionar=window.document.getElementById("bt_selecionar_son")
 var progress_bar=window.document.getElementById("progress-bar")
+var icone_volume=window.document.getElementById("icone_volume")
+var bt_desligar=window.document.getElementById("bt_desligar_alarme")
+var hora_dispertou=window.document.getElementById("hora_dispertou")
 /*                          REFERENCIA HTML       */
 repetidor=new Repetidor()
 rel=new Relogio()
@@ -284,4 +315,6 @@ bt_confirmar.addEventListener("mouseup",dispertador.novo_alarme);
 bt_tocar_son.addEventListener("click",controlador.tocar);
 seletor_volume.addEventListener("input",controlador.volume)
 bt_selecionar.addEventListener("click",controlador.diretorio)
+bt_desligar.addEventListener("click",dispertador.desligar_dispertador)
 /*                    ASSOCIAR  EVENTOS       */
+dispertador.dispertar()
