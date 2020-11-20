@@ -7,31 +7,41 @@
         <title>Acorda.net</title>
     </head>
     <body> 
-       
         <div class="dispertar" id="dispertar">
             <h2 id="hora_dispertou">00:00:00</h2>
             <button id="bt_desligar_alarme" class="bt_confirmar">DESLIGAR</button>
-            <img src="./img/icone_volume.png" width="300px" id='icone_volume'>
+            <img src="../img/icone_volume.png" width="300px" id='icone_volume'>
         </div>
         <div class="bg"></div>
         <video autoplay muted loop class=video-bg>
             <source src="../img/video-bg2.mp4" type="video/mp4">
         </video>      
+        <!-- ----------------------------------- -->
+
+
             <div class=container_principal id=container_principal>
-            <div class=container-hora-titulo>
-                <h1 >ACORDA.NET</h1>
-                <span id=relogio>
-                </span>
-            </div>
-            <div class=container_botoes>
-                <button id=bt_timer class=bt-funçoes>TIMER</button>
-                <button id=bt_dispertador class=bt-funçoes>DISPERTADOR</button>
-                <button id=bt_cronometro class=bt-funçoes>CRONÔMETRO</button>
-            </div>
-            <div class=container_input>
-                <input type="number" id=input_hora class=input min=0 max=23>:
-                <input type="number" id=input_minuto class=input min=0 max=59>:
-                <input type="number" id=input_segundo class=input min=0 max=59>
-            </div>  
-    <script type="text/javascript" src="script.js"></script>
+                <div class=container-hora-titulo>
+                    <h1 >ACORDA.NET</h1>
+                    <span id=relogio>
+                    </span>
+                </div><!-- container-hora-titulo -->
+                <div class=container_botoes>
+                    <button id=bt_timer class=bt-funçoes>TIMER</button>
+                    <button id=bt_dispertador class=bt-funçoes>DISPERTADOR</button>
+                    <button id=bt_cronometro class=bt-funçoes>CRONÔMETRO</button>
+                </div><!-- container_botoes -->
+                <div class=container_input>
+                    <input type="number" id=input_hora class=input min=0 max=23>:
+                    <input type="number" id=input_minuto class=input min=0 max=59>:
+                    <input type="number" id=input_segundo class=input min=0 max=59>
+                </div><!-- container_input   -->
+                <div class="tempo_timer">
+                    <span id="tempo">00:00:00</span>
+                    <progress id="restante"></progress>
+                </div><!-- tempo_timer -->
+                <button id="bt_confirmar">CONFIRMAR</button>
+            </div><!-- container principal -->
+
+
+    <script type="text/javascript" src="timer_script.js"></script>
 </html>
