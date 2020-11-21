@@ -16,9 +16,8 @@
         <video autoplay muted loop class=video-bg>
             <source src="../img/video-bg2.mp4" type="video/mp4">
         </video>      
+        <audio src="../sons/alarme1.mp3" id="audio"></audio>
         <!-- ----------------------------------- -->
-
-
             <div class=container_principal id=container_principal>
                 <div class=container-hora-titulo>
                     <h1 >ACORDA.NET</h1>
@@ -39,7 +38,12 @@
                     <span id="tempo">00:00:00</span>
                     <progress id="restante"></progress>
                 </div><!-- tempo_timer -->
-                <button id="bt_confirmar">CONFIRMAR</button>
+                <button class="bt_confirmar" id="bt_confirmar">CONFIRMAR</button>
+                <div id="botes">
+                    <button class="bt_hora">00:00:10</button>
+                    <button class="bt_hora">00:01:00</button>
+                    <button class="bt_hora">00:05:00</button>
+                </div><!-- botoes -->
             </div><!-- container principal -->
 
 
