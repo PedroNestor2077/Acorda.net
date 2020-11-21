@@ -92,7 +92,7 @@ class Relogio{
 class Controlador{
     constructor(){
         audio.src=select_sons.value
-        audio.volume=(seletor_volume.value/100)*0 
+        audio.volume=(seletor_volume.value/100)
     };
     volume(){
         audio.volume=(seletor_volume.value/100)
@@ -317,4 +317,3 @@ seletor_volume.addEventListener("input",controlador.volume)
 bt_selecionar.addEventListener("click",controlador.diretorio)
 bt_desligar.addEventListener("click",dispertador.desligar_dispertador)
 /*                    ASSOCIAR  EVENTOS       */
-dispertador.dispertar()
