@@ -31,7 +31,7 @@ body{
 .container_principal{
     position: relative;
     display: grid;
-    grid-template-rows: 10% 10% 16% 64%;
+    grid-template-rows: 10% 10% 16% 10% 22% 32%;
     align-items: center;
     border-radius: 10px;
     width:402px;
@@ -44,7 +44,7 @@ body{
 .container_principal:hover{
     position: relative;
     display: grid;
-    grid-template-rows: 10% 10% 16% 64%;
+    grid-template-rows: 10% 10% 16% 10% 22% 32%;
     align-items: center;
     border-radius: 10px;
     width:402px;
@@ -57,7 +57,7 @@ body{
 .container_principal_off{
     position:flex;
     display: grid;
-    grid-template-rows: 10% 10% 16% 64%;
+    grid-template-rows: 10% 10% 16% 10% 22% 32%;
     align-items: center;
     border-radius: 10px;
     width:402px;
@@ -68,15 +68,7 @@ body{
     border: solid black 2px;
     pointer-events: none;
 }
-.container_botoes{
-    background-color: rgb(119, 155, 190);
-    display: inline-flex;
-    margin:6px;
-    margin-top: 10px;
-    border-radius: 15px;
-    justify-content: center;
-    grid-row: 2;y
-}
+
 .funçoes{
     display: grid;
     grid-template-columns:100px 100px 160px ;
@@ -90,36 +82,6 @@ body{
     border-radius: 5px;
     align-items: top;   
     grid-row: 4; 
-}
-.botoes_hora_r1{
-    display: flex;
-    flex-direction: column;
-    margin-top:2px;
-    grid-row-start: 1;
-    grid-row-start: 1;
-    grid-row-end: 5;
-}
-.seletor{
-    margin-top: 25px;
-    height: 20px;
-    grid-row: 1;
-    grid-column: 2;
-}
-#select_sons{
-    width:150px;
-    font-size: 20px; 
-    height: 40px;
-    grid-row: 2;
-    grid-column: 2;
-    border-radius: 5px;
-
-    padding: 10px;
-    border: none;
-    box-shadow: 0 5px 25px rgba(0,0,0,.5);
-    outline: none;
-}
-#select_sons:hover{
-    background-color: grey;
 }
 .bt_confirmar_{
     grid-row: 3;
@@ -158,69 +120,9 @@ body{
     justify-content: center;
     
 }
-.volume{
-    display: grid;
-    grid-template-columns: 200% 100%;
-    grid-row: 2;
-    grid-column: 2;
-}
-#bt_tocar_son{
-    grid-template-columns: 2;
-    margin-top: 20px;
-    border-radius: 200px;
-    width:45px;
-    height:45px;
-    background-image:url("img/ico_volume.png");
-    background-position: center;
-    background-size:45px ;
-}
-#seletor_volume{
 
-    margin-top: 40px;
-    box-shadow:inset 0 3px 10px rgba(0,0,0,.5);
-    height: 10px;
-    border-radius: 10px;
-}
-#seletor_volume::-webkit-slider-thumb{
-    width: 40px;
-    height:10px;
-    background-color: white;
-    cursor: pointer;
-}
 /*  -------------------------novo css-------------------------                        */
-.botao_hora{
-    width:110px;
-    height: 37px;
-    border-radius: 30px;
-    font-size: 20px;
-    margin-top: 05px;
-    margin-left: 3px;
-    border:none;
-    cursor: pointer;
-    box-shadow: 0 4px 0 rgba(0,0,0,.5);
-    outline: thin dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: 0px;
-    font-weight: 600;
-    background-color: #E6E6FA;
-}
-.botao_hora:hover{
-    background-color: grey;
-    width:110px;
-    height: 37px;
-    border-radius: 30px;
-    font-size: 20px;
-    margin-top: 5px;
-    border:none;
-    cursor: pointer;
-    box-shadow: 0 2px 0 black;
-}
-.botao_hora:active{
-    position: relative;
-    top: 2px;
-    box-shadow:none;
 
-}
 .bt-funçoes{
     width: 130px;
     height: 50px;
@@ -289,11 +191,13 @@ body{
     }
 }
 .bt_confirmar{    
+    margin-left:75px;
+    grid-row:6;
     width:260px;
     height: 100px;
     border-radius: 200px;
     border: none;
-    box-shadow:0 8px 25px rgba(0,0,0,.5);
+    box-shadow:0 8px 25px rgba(0,0,0,1);
     font-weight: 600;
     font-size: 17px;    
     outline: thin dotted;
@@ -417,5 +321,55 @@ h1{
     width:230px;
     height:90px;
     background-color:rgba(0, 0, 225, .9);
-    margin-left:85px;
+    margin-left:92px;
+}
+/* ------------------------------------------ */
+.tempo_timer{
+    grid-row: 5;
+    text-align:center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#tempo{
+    font-family:'Bangers';
+    font-size:75px;
+    
+}
+#restante{
+    grid-row: 5;
+    width: 60%;
+    height: 30px;
+} 
+.bt_hora{
+    width:110px;
+    height: 37px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 05px;
+    margin-left: 17px;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 4px 0 rgba(0,0,0,.5);
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+    font-weight: 600;
+    background-color: #E6E6FA;
+}
+.bt_hora:hover{
+    background-color: grey;
+    width:110px;
+    height: 37px;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-top: 5px;
+    border:none;
+    cursor: pointer;
+    box-shadow: 0 2px 0 black;
+}
+.bt_hora:active{
+    position: relative;
+    top: 2px;
+    box-shadow:none;
+
 }
