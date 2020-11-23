@@ -92,7 +92,7 @@ class Relogio{
 class Controlador{
     constructor(){
         audio.src=select_sons.value
-        audio.volume=(seletor_volume.value/100)*0 
+        audio.volume=(seletor_volume.value/100)
     };
     volume(){
         audio.volume=(seletor_volume.value/100)
@@ -280,8 +280,8 @@ var relogio=window.document.getElementById('relogio');
 var input_hora=window.document.getElementById('input_hora');
 var input_minuto=window.document.getElementById('input_minuto');
 var input_segundo=window.document.getElementById('input_segundo');
-const audio=window.document.getElementById('audio');
-const select_sons=window.document.getElementById('select_sons');
+var audio=window.document.getElementById('audio');
+var select_sons=window.document.getElementById('select_sons');
 var info_alarme=window.document.getElementById('info_alarme');
 var info_tempo=window.document.getElementById('info_tempo');
 var bt_tocar_son=window.document.getElementById("bt_tocar_son");
@@ -317,4 +317,3 @@ seletor_volume.addEventListener("input",controlador.volume)
 bt_selecionar.addEventListener("click",controlador.diretorio)
 bt_desligar.addEventListener("click",dispertador.desligar_dispertador)
 /*                    ASSOCIAR  EVENTOS       */
-dispertador.dispertar()

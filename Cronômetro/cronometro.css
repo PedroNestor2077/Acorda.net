@@ -31,7 +31,7 @@ body{
 .container_principal{
     position: relative;
     display: grid;
-    grid-template-rows: 10% 10% 16% 64%;
+    grid-template-rows: 10% 10% 16% 10% 22% 32%;
     align-items: center;
     border-radius: 10px;
     width:402px;
@@ -44,7 +44,7 @@ body{
 .container_principal:hover{
     position: relative;
     display: grid;
-    grid-template-rows: 10% 10% 16% 64%;
+    grid-template-rows: 10% 10% 16% 10% 22% 32%;
     align-items: center;
     border-radius: 10px;
     width:402px;
@@ -57,7 +57,7 @@ body{
 .container_principal_off{
     position:flex;
     display: grid;
-    grid-template-rows: 10% 10% 16% 64%;
+    grid-template-rows: 10% 10% 16% 10% 22% 32%;
     align-items: center;
     border-radius: 10px;
     width:402px;
@@ -67,15 +67,6 @@ body{
     box-shadow: 10px 20px 10px rgba(0,0,0,.7);
     border: solid black 2px;
     pointer-events: none;
-}
-.container_botoes{
-    background-color: rgb(119, 155, 190);
-    display: inline-flex;
-    margin:6px;
-    margin-top: 10px;
-    border-radius: 15px;
-    justify-content: center;
-    grid-row: 2;y
 }
 .funçoes{
     display: grid;
@@ -91,137 +82,13 @@ body{
     align-items: top;   
     grid-row: 4; 
 }
-.botoes_hora_r1{
-    display: flex;
-    flex-direction: column;
-    margin-top:2px;
-    grid-row-start: 1;
-    grid-row-start: 1;
-    grid-row-end: 5;
-}
-.seletor{
-    margin-top: 25px;
-    height: 20px;
-    grid-row: 1;
-    grid-column: 2;
-    
-}
-#select_sons{
-    width:150px;
-    font-size: 20px; 
-    height: 40px;
-    grid-row: 2;
-    grid-column: 2;
-    border-radius: 5px;
-
-    padding: 10px;
-    border: none;
-    box-shadow: 0 5px 25px rgba(0,0,0,.5);
-    outline: none;
-}
-#select_sons:hover{
-    background-color: grey;
-}
 .bt_confirmar_{
     grid-row: 3;
     grid-column: 2;
 
 }
-.info{
-    display: grid;
-    flex-direction: row;
-    align-items: top;
-    grid-template-rows: 40% 40%;
-    grid-template-columns: 30% 70%;
-    border-radius: 20px;
-    width:270%;
-    height: 98%;
-    background-color: rgb(94, 127, 160);
-    grid-row: 4;
-    grid-column: 2;
-    margin-top:-5px;
-    box-shadow:0px 2px 2px rgba(0,0,0,.7);
-}
-#alarme{
-    grid-column:2;
-    grid-row: 1;
-    font-size: 30px;
-}
-#tempo{
-    grid-row: 2;
-    grid-column: 2;
-    font-size: 30px;
-}
-.dispertou{
-    display: flex;
-    background-color:red;
-    align-items: center;
-    justify-content: center;
-    
-}
-.volume{
-    display: grid;
-    grid-template-columns: 200% 100%;
-    grid-row: 2;
-    grid-column: 2;
-}
-#bt_tocar_son{
-    grid-template-columns: 2;
-    margin-top: 20px;
-    border-radius: 200px;
-    width:45px;
-    height:45px;
-    background-image:url("../img/ico_volume.png");
-    background-position: center;
-    background-size:45px ;
-}
-#seletor_volume{
-
-    margin-top: 40px;
-    box-shadow:inset 0 3px 10px rgba(0,0,0,.5);
-    height: 10px;
-    border-radius: 10px;
-}
-#seletor_volume::-webkit-slider-thumb{
-    width: 40px;
-    height:10px;
-    background-color: white;
-    cursor: pointer;
-}
 /*  -------------------------novo css-------------------------                        */
-.botao_hora{
-    width:110px;
-    height: 37px;
-    border-radius: 30px;
-    font-size: 20px;
-    margin-top: 05px;
-    margin-left: 3px;
-    border:none;
-    cursor: pointer;
-    box-shadow: 0 4px 0 rgba(0,0,0,.5);
-    outline: thin dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: 0px;
-    font-weight: 600;
-    background-color: #E6E6FA;
-}
-.botao_hora:hover{
-    background-color: grey;
-    width:110px;
-    height: 37px;
-    border-radius: 30px;
-    font-size: 20px;
-    margin-top: 5px;
-    border:none;
-    cursor: pointer;
-    box-shadow: 0 2px 0 black;
-}
-.botao_hora:active{
-    position: relative;
-    top: 2px;
-    box-shadow:none;
 
-}
 .bt-funçoes{
     width: 130px;
     height: 50px;
@@ -234,7 +101,6 @@ body{
     outline-offset: 0px;
     font-weight: 550;
     font-size: 15px;
-    
 }
 .bt-funçoes:hover{
     width: 130px;
@@ -254,15 +120,6 @@ body{
     position: relative;
     top:5px;
     box-shadow:none;
-}
-#bt_selecionar_son{
-    font-size: 13px;
-    grid-row: 1;
-    border-radius: 100px;
-    width:110px;
-    height: 40px;
-    margin-left: 37px;
-    margin-top: 25px;
 }
 .video-bg{
     position: absolute;
@@ -290,11 +147,13 @@ body{
     }
 }
 .bt_confirmar{    
+    margin-left:75px;
+    grid-row:6;
     width:260px;
     height: 100px;
     border-radius: 200px;
     border: none;
-    box-shadow:0 8px 25px rgba(0,0,0,.5);
+    box-shadow:0 8px 25px rgba(0,0,0,1);
     font-weight: 600;
     font-size: 17px;    
     outline: thin dotted;
@@ -334,6 +193,8 @@ body{
     border: none;
     border-bottom:3px solid silver;
     color:rgba(0,0,0,.8);
+    background-color: grey;
+    pointer-events:none;
 }
 .input:hover{
     box-shadow:0px 2px 0px rgba(0,0,0,1);
@@ -351,29 +212,6 @@ h1{
     font-size: 45px;
     grid-column: 1;
     margin-left: 5px;
-}
-.info_texto{
-    font-size: 35px;
-    margin-top: 5px;
-}
-#icone-alarme{
-    margin-left: 20px;
-    margin-top: 5px;
-    
-}
-#icone-ampulheta{
-    margin-left: 20px;
-}
-#info_tempo{
-    margin-top: 10px;
-    color: rgba(0,0,0,.7);
-}
-#info_alarme{
-    color: rgba(0,0,0,.7);
-}
-#progress-bar{
-    margin-left: 79px;
-    width: 135px;
 }
 .dispertar{
     position: absolute;
@@ -418,8 +256,53 @@ h1{
     width:230px;
     height:90px;
     background-color:rgba(0, 0, 225, .9);
-    margin-left:85px;
+    margin-left:92px;
 }
-#bt_dispertador{
+/* ------------------------------------------ */
+.tempo_timer{
+    grid-row: 5;
+    text-align:center;
+    border-radius: 10px;
+}
+#tempo{
+    font-family:'Bangers';
+    font-size:75px;
+    
+}
+#restante{
+    grid-row: 5;
+    width: 60%;
+    height: 30px;
+} 
+#centesimo{
+    font-family:"Bangers";
+    font-size: 30px;
+}
+.bt_confirmar_PARAR{    
+    margin-left:75px;
+    grid-row:6;
+    width:260px;
+    height: 100px;
+    border-radius: 200px;
+    border: none;
+    box-shadow:0 8px 25px rgba(0,0,0,1);
+    font-weight: 600;
+    font-size: 17px;    
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    background-color: rgb(209, 43, 43);
+}
+.bt_confirmar_PARAR:hover{
+    background-color: RED;
+    box-shadow:0 8px 25px rgba(0,0,0,.7);
+}
+.bt_confirmar_PARAR:active{
+    position: relative;
+    top:5px;
+    background-color: RED;
+    box-shadow:0 0px 0px rgba(0,0,0,.7);
+
+}
+#bt_cronometro{
     background-color: grey;
 }

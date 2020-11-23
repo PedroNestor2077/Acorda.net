@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<link href="timer_style.css" rel="stylesheet">
+<link href="cronometro.css" rel="stylesheet">
 <html>
     <head>
         <meta charset="UTF-8">
@@ -25,27 +25,20 @@
                     </span>
                 </div><!-- container-hora-titulo -->
                 <div class=container_botoes>
-                    <button id=bt_timer class=bt-funçoes>TIMER</button>
+                    <a href="../Timer/timer.html"><button id=bt_timer class=bt-funçoes>TIMER</button></a>
                     <a href="../Dispertador/dispertador.html"><button id=bt_dispertador class=bt-funçoes>DISPERTADOR</button></a>
-                    <a href="../Cronômetro/cronometro.html"><button id=bt_cronometro class=bt-funçoes>CRONÔMETRO</button></a>
+                    <button id=bt_cronometro class=bt-funçoes>CRONÔMETRO</button>
                 </div><!-- container_botoes -->
                 <div class=container_input>
-                    <input type="number" id=input_hora class=input min=0 max=23>:
-                    <input type="number" id=input_minuto class=input min=0 max=59>:
-                    <input type="number" id=input_segundo class=input min=0 max=59>
+                    <input type="TEXT" id=input_hora class=input min=0 max=0>:
+                    <input type="TEXT" id=input_minuto class=input min=0 max=0>:
+                    <input type="TEXT" id=input_segundo class=input min=0 max=0>
                 </div><!-- container_input   -->
                 <div class="tempo_timer">
-                    <span id="tempo">00:00:00</span>
+                    <span id="tempo">00:00:00</span><span id="centesimo">00</span>
                     <progress id="restante"></progress>
                 </div><!-- tempo_timer -->
-                <button class="bt_confirmar" id="bt_confirmar">CONFIRMAR</button>
-                <div id="botes">
-                    <button class="bt_hora">00:00:10</button>
-                    <button class="bt_hora">00:01:00</button>
-                    <button class="bt_hora">00:05:00</button>
-                </div><!-- botoes -->
+                <button class="bt_confirmar" id="bt_confirmar">INICIAR</button>
             </div><!-- container principal -->
-
-
-    <script type="text/javascript" src="timer_script.js"></script>
+    <script type="text/javascript" src="cronometro_script.js"></script>
 </html>
