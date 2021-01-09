@@ -23,3 +23,7 @@
 
 <h1>Como utilizar </h1>
   <ul><li>Para rodar basta clonar o repositorio e rodar o arquivo "/Acorda.net/Dispertador/dispertador.html</li></ul>
+ <h1>Técnologias utilizadas </h1>
+ <ul><li>HTML5</li>
+    <li>CSS3</li>
+<li>JavaScript</li></ul>
